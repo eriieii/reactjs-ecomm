@@ -1,19 +1,21 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-import Sidebar from './Footer';
 
 const Footer = () => {
-
     return (
-        <div className="footer clearfix mb-0 text-muted">
-            <div className="float-start">
-                <p>2021 &copy; Mazer</p>
-            </div>
-            <div className="float-end">
-                <p>Crafted with <span className="text-danger"><i className="bi bi-heart"></i></span></p>
-            </div>
-        </div>        
+        <footer className="py-4 bg-light mt-auto">
+                    <div className="container-fluid px-4">
+                        <div className="d-flex align-items-center justify-content-between small">
+                            <div className="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div>
+                                <Link to="#">Privacy Policy</Link>
+                                
+                                <Link to="#">Terms &amp; Conditions</Link>
+                            </div>
+                        </div>
+                    </div>
+        </footer>
     );
 }
-
 export default Footer;

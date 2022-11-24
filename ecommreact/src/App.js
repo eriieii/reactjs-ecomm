@@ -1,19 +1,18 @@
 import React from 'react';
-import {BrowserRouter as Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 
-import Main from './layouts/dashboard/Main';
+import Master from './layouts/dashboard/Master';
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        
-
-          <Route path="/dashboard" component={Main} />
-
-        
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path='/dashboard' element={<Master/>}/>  
+        </Routes>  
+      </Router>  
+      
     </div>
   );
 }

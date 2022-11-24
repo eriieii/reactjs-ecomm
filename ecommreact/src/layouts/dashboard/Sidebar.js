@@ -5,363 +5,73 @@ import {Link} from 'react-router-dom';
 const Sidebar = () => {
 
     return (
-        <div classNameName="sidebar-wrapper active">
-            <div className="sidebar-header">
-                <div className="d-flex justify-content-between">
-                    <div className="logo">
-                        {/* <Link to="#"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></Link> */}
+        <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div className="sb-sidenav-menu">
+                        <div className="nav">
+                            <div className="sb-sidenav-menu-heading">Core</div>
+                            <Link className="nav-link" to="index.html">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </Link>
+                            <div className="sb-sidenav-menu-heading">Interface</div>
+                            <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div className="sb-nav-link-icon"><i className="fas fa-columns"></i></div>
+                                Layouts
+                                <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down"></i></div>
+                            </Link>
+                            <div className="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav className="sb-sidenav-menu-nested nav">
+                                    <a className="nav-link" to="layout-static.html">Static Navigation</a>
+                                    <a className="nav-link" to="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div className="sb-nav-link-icon"><i className="fas fa-book-open"></i></div>
+                                Pages
+                                <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down"></i></div>
+                            </Link>
+                            <div className="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav className="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down"></i></div>
+                                    </Link>
+                                    <div className="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav className="sb-sidenav-menu-nested nav">
+                                            <Link className="nav-link" to="login.html">Login</Link>
+                                            <Link className="nav-link" to="register.html">Register</Link>
+                                            <Link className="nav-link" to="password.html">Forgot Password</Link>
+                                        </nav>
+                                    </div>
+                                    <Link className="nav-link collapsed" to="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down"></i></div>
+                                    </Link>
+                                    <div className="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav className="sb-sidenav-menu-nested nav">
+                                            <Link className="nav-link" to="401.html">401 Page</Link>
+                                            <Link className="nav-link" to="404.html">404 Page</Link>
+                                            <Link className="nav-link" to="500.html">500 Page</Link>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div className="sb-sidenav-menu-heading">Addons</div>
+                            <Link className="nav-link" to="charts.html">
+                                <div className="sb-nav-link-icon"><i className="fas fa-chart-area"></i></div>
+                                Charts
+                            </Link>
+                            <Link className="nav-link" to="tables.html">
+                                <div className="sb-nav-link-icon"><i className="fas fa-table"></i></div>
+                                Tables
+                            </Link>
+                        </div>
                     </div>
-                    <div className="toggler">
-                        <Link to="#" className="sidebar-hide d-xl-none d-block"><i className="bi bi-x bi-middle"></i></Link>
+                    <div className="sb-sidenav-footer">
+                        <div className="small">Logged in as:</div>
+                        Start Bootstrap
                     </div>
-                </div>
-            </div>
-            <div className="sidebar-menu">
-                <ul className="menu">
-                    <li className="sidebar-title">Menu</li>
-
-                    <li className="sidebar-item active ">
-                        <Link to="index.html" className='sidebar-link'>
-                            <i className="bi bi-grid-fill"></i>
-                            <span>Dashboard</span>
-                        </Link>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <Link to="#" className='sidebar-link'>
-                            <i className="bi bi-stack"></i>
-                            <span>Components</span>
-                        </Link>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <Link to="component-alert.html">Alert</Link>
-                            </li>
-                            <li className="submenu-item ">
-                                <Link to="component-badge.html">Badge</Link>
-                            </li>
-                            {/* <li className="submenu-item ">
-                                <a href="component-breadcrumb.html">Breadcrumb</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-button.html">Button</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-card.html">Card</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-carousel.html">Carousel</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-dropdown.html">Dropdown</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-list-group.html">List Group</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-modal.html">Modal</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-navs.html">Navs</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-pagination.html">Pagination</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-progress.html">Progress</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-spinner.html">Spinner</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="component-tooltip.html">Tooltip</a>
-                            </li> */}
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <Link to="#" className='sidebar-link'>
-                            <i className="bi bi-collection-fill"></i>
-                            <span>Extra Components</span>
-                        </Link>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <Link to="extra-component-avatar.html">Avatar</Link>
-                            </li>
-                            {/* <li className="submenu-item ">
-                                <a href="extra-component-sweetalert.html">Sweet Alert</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="extra-component-toastify.html">Toastify</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="extra-component-rating.html">Rating</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="extra-component-divider.html">Divider</a>
-                            </li> */}
-                        </ul>
-                    </li>
-
-                    {/* <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-grid-1x2-fill"></i>
-                            <span>Layouts</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="layout-default.html">Default Layout</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="layout-vertical-1-column.html">1 Column</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="layout-vertical-navbar.html">Vertical with Navbar</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="layout-horizontal.html">Horizontal Menu</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-title">Forms &amp; Tables</li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-hexagon-fill"></i>
-                            <span>Form Elements</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="form-element-input.html">Input</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-element-input-group.html">Input Group</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-element-select.html">Select</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-element-radio.html">Radio</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-element-checkbox.html">Checkbox</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-element-textarea.html">Textarea</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="form-layout.html" className='sidebar-link'>
-                            <i className="bi bi-file-earmark-medical-fill"></i>
-                            <span>Form Layout</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-pen-fill"></i>
-                            <span>Form Editor</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="form-editor-quill.html">Quill</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-editor-ckeditor.html">CKEditor</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-editor-summernote.html">Summernote</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="form-editor-tinymce.html">TinyMCE</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="table.html" className='sidebar-link'>
-                            <i className="bi bi-grid-1x2-fill"></i>
-                            <span>Table</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="table-datatable.html" className='sidebar-link'>
-                            <i className="bi bi-file-earmark-spreadsheet-fill"></i>
-                            <span>Datatable</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-title">Extra UI</li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-pentagon-fill"></i>
-                            <span>Widgets</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="ui-widgets-chatbox.html">Chatbox</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="ui-widgets-pricing.html">Pricing</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="ui-widgets-todolist.html">To-do List</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-egg-fill"></i>
-                            <span>Icons</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="ui-icons-bootstrap-icons.html">Bootstrap Icons </a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="ui-icons-fontawesome.html">Fontawesome</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="ui-icons-dripicons.html">Dripicons</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-bar-chart-fill"></i>
-                            <span>Charts</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="ui-chart-chartjs.html">ChartJS</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="ui-chart-apexcharts.html">Apexcharts</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="ui-file-uploader.html" className='sidebar-link'>
-                            <i className="bi bi-cloud-arrow-up-fill"></i>
-                            <span>File Uploader</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-map-fill"></i>
-                            <span>Maps</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="ui-map-google-map.html">Google Map</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="ui-map-jsvectormap.html">JS Vector Map</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-title">Pages</li>
-
-                    <li className="sidebar-item  ">
-                        <a href="application-email.html" className='sidebar-link'>
-                            <i className="bi bi-envelope-fill"></i>
-                            <span>Email Application</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="application-chat.html" className='sidebar-link'>
-                            <i className="bi bi-chat-dots-fill"></i>
-                            <span>Chat Application</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="application-gallery.html" className='sidebar-link'>
-                            <i className="bi bi-image-fill"></i>
-                            <span>Photo Gallery</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="application-checkout.html" className='sidebar-link'>
-                            <i className="bi bi-basket-fill"></i>
-                            <span>Checkout Page</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-person-badge-fill"></i>
-                            <span>Authentication</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="auth-login.html">Login</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="auth-register.html">Register</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="auth-forgot-password.html">Forgot Password</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-item  has-sub">
-                        <a href="#" className='sidebar-link'>
-                            <i className="bi bi-x-octagon-fill"></i>
-                            <span>Errors</span>
-                        </a>
-                        <ul className="submenu ">
-                            <li className="submenu-item ">
-                                <a href="error-403.html">403</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="error-404.html">404</a>
-                            </li>
-                            <li className="submenu-item ">
-                                <a href="error-500.html">500</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li className="sidebar-title">Raise Support</li>
-
-                    <li className="sidebar-item  ">
-                        <a href="https://zuramai.github.io/mazer/docs" className='sidebar-link'>
-                            <i className="bi bi-life-preserver"></i>
-                            <span>Documentation</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" className='sidebar-link'>
-                            <i className="bi bi-puzzle"></i>
-                            <span>Contribute</span>
-                        </a>
-                    </li>
-
-                    <li className="sidebar-item  ">
-                        <a href="https://github.com/zuramai/mazer#donate" className='sidebar-link'>
-                            <i className="bi bi-cash"></i>
-                            <span>Donate</span>
-                        </a>
-                    </li> */}
-
-                </ul>
-            </div>
-            <button className="sidebar-toggler btn x"><i data-feather="x"></i></button>
-        </div>
+        </nav>
     );
 }
 
